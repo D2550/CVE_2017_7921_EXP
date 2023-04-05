@@ -136,15 +136,14 @@ class CVE_2017_7921_EXP(object):
 
     """
 
-    def __init__(self, target):
-        self.targetList = param_to_list(target)
+def __init__(self, target):
+    self.targetList = param_to_list(target)
 
-    def run(self):
-        print("There are %s targets" % len(self.targetList))
-        if len(self.targetList) > 0:
-            exploit(self.targetList)
-        print("Finished")
-
-
-if __name__ == '__main__':
+def run(self):
+    print("There are %s targets" % len(self.targetList))
+    if len(self.targetList) > 0:
+        with ThreadPoolExecutor(max_workers=20) as executor:
+            executor.map(exploit, self.targetList)
+    print("Finished")
+if name == 'main':
     fire.Fire(CVE_2017_7921_EXP)
