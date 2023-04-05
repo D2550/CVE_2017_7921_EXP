@@ -145,5 +145,5 @@ def run(self):
         with ThreadPoolExecutor(max_workers=20) as executor:
             executor.map(exploit, self.targetList)
     print("Finished")
-if name == 'main':
+if  __name__ == '__main__':
     fire.Fire(CVE_2017_7921_EXP)
