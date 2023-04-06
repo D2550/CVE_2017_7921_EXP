@@ -7,3 +7,4 @@ pip3 install requirements.txt
 python3 .\CVE_2017_7921_EXP.py --target=1.txt run
 ```
 Python3.9 Windows 11 测试通过
+多线程改炸了，有需要可以回滚使用
